@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PeliculaModel } from "../../modelos/model";
 import { DataService } from "../../servicios/data.service";
 import { ToastrService } from 'ngx-toastr';
-import { time } from 'console';
+
 
 @Component({
   selector: 'app-pelicula-listado',
