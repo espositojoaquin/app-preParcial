@@ -1,0 +1,15 @@
+<app-menu></app-menu>
+<div class="container">
+    <div class="tabla colum" >
+        
+     <app-tabla-pelicula (peliculaSeleccionada)="tomarPeliculaParaDetalles($event)"></app-tabla-pelicula>
+       
+    </div>
+    <div class="detalle">
+        
+     <app-detalle-peliculas (eventoBorrarPelicula)="borrarPelicula($event)" [pelicula]="pelicula" [borrado]="1"></app-detalle-peliculas>
+          
+        
+    </div> 
+
+</div>

@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+.tabla{
+    width: 65%;
+}
+.detalle{
+    margin-top: 5rem;
+    width: 30%;
+}
+
+@media screen and (max-width: 1000px)
+{
+    .detalle{
+        margin-top: 5rem;
+        width: auto;
+    }
+    .container{
+        justify-content: center;
+        width: auto;
+    }
+    .tabla{
+        width: auto;
+    }
+}

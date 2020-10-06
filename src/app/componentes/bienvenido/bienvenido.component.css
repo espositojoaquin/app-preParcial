@@ -1,0 +1,16 @@
+div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-top: 15rem;
+    width: auto;
+}
+h1{
+    font-size: 10rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: aquamarine;
+    opacity: 0.3;
+}

@@ -1,0 +1,61 @@
+<app-menu></app-menu>
+<div class="row">
+    <div class="col-6 p-5 ld ld-slide-ttb-in">
+        <h1>Alta de Película</h1>
+        <hr>
+        <form autocomplete="off" >
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label" >Nombre</label>
+                <div class="col">
+                    <input [(ngModel)]="pelicula.nombre" name="nombre" class="form-control" type="text" placeholder="Nombre" 
+                       >
+                   
+                </div>
+            </div>
+            <div class="form-group row ">
+                <label class="col-4 col-form-label">Tipo</label>
+                <div class="col">
+                    <select class="form-control" name="tipo" [(ngModel)]="pelicula.tipo" >
+                        <option value="terror"> Terror </option>
+                        <option value="amor"> Amor </option>
+                        <option value="comedia"> Comedia </option>
+                        <option value="otros"> Otros </option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label" >Fecha de Estreno</label>
+                <div class="col">
+                    <input [(ngModel)]="pelicula.fecha" name="fecha" class="form-control" type="date" placeholder="Fecha de Estreno" >
+                  
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label" >Público estimado</label>
+                <div class="col">
+                    <input [(ngModel)]="pelicula.publico" name="publico" class="form-control" type="number" placeholder="Público estimado" >
+                    
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Actor</label>
+                <div class="col">
+                    <input [(ngModel)]="pelicula.actor.nombre" name="actor" class="form-control" type="text" placeholder="Actor" >
+                    
+                    
+                </div>
+            </div>
+            <div class="form-group row mt-5">
+                <label class="col-12 col-form-label">&nbsp;</label>
+                <div class="input-group col-md">
+                    <button (click)="guardar()" type="submit" class="btn btn-outline-dark btn-block"> Guardar </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-5 p-5">
+      <app-tabla-actor (ActorSeleccionado)="actorSeleccionado($event)"></app-tabla-actor>
+    </div>
+</div>
