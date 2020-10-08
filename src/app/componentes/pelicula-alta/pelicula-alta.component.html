@@ -3,45 +3,64 @@
     <div class="col-6 p-5 ld ld-slide-ttb-in">
         <h1>Alta de Película</h1>
         <hr>
-        <form autocomplete="off" >
+        <form [formGroup]="form" (ngSubmit)="guardar()">
 
             <div class="form-group row">
                 <label class="col-4 col-form-label" >Nombre</label>
                 <div class="col">
-                    <input [(ngModel)]="pelicula.nombre" name="nombre" class="form-control" type="text" placeholder="Nombre" 
+                    <input formControlName="nombre" name="nombre" class="form-control" type="text" placeholder="Nombre" 
                        >
+                       <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="alert-danger">
+                        <div *ngIf="nombre.errors.required">
+                            Nombre es requerido
+                        </div>
+                    </div>
                    
                 </div>
             </div>
             <div class="form-group row ">
                 <label class="col-4 col-form-label">Tipo</label>
                 <div class="col">
-                    <select class="form-control" name="tipo" [(ngModel)]="pelicula.tipo" >
+                    <select class="form-control" name="tipo" formControlName="tipo" >
                         <option value="terror"> Terror </option>
                         <option value="amor"> Amor </option>
                         <option value="comedia"> Comedia </option>
                         <option value="otros"> Otros </option>
                     </select>
+                    <div *ngIf="tipo.invalid && (tipo.dirty || tipo.touched)" class="alert-danger">
+                        <div *ngIf="tipo.errors.required">
+                            Tipo es requerido
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-4 col-form-label" >Fecha de Estreno</label>
                 <div class="col">
-                    <input [(ngModel)]="pelicula.fecha" name="fecha" class="form-control" type="date" placeholder="Fecha de Estreno" >
-                  
+                    <input formControlName="fecha_estreno" name="fecha" class="form-control" type="date" placeholder="Fecha de Estreno" >
+                    <div *ngIf="fecha.invalid && (fecha.dirty || fecha.touched)" class="alert-danger">
+                        <div *ngIf="fecha.errors.required">
+                            fecha es requerido
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-4 col-form-label" >Público estimado</label>
                 <div class="col">
-                    <input [(ngModel)]="pelicula.publico" name="publico" class="form-control" type="number" placeholder="Público estimado" >
-                    
+                    <input formControlName="cantidad_publico" name="publico" class="form-control" type="number" placeholder="Público estimado" >
+                    <div *ngIf="cantidad.invalid && (cantidad.dirty || cantidad.touched)" class="alert-danger">
+                        <div *ngIf="cantidad.errors.required">
+                            público es requerido
+                        </div>
+                    </div>
                 </div>
+
             </div>
             <div class="form-group row">
                 <label class="col-4 col-form-label">Actor</label>
                 <div class="col">
-                    <input [(ngModel)]="pelicula.actor.nombre" name="actor" class="form-control" type="text" placeholder="Actor" >
+                    <input formControlName="actor" name="actor" class="form-control" type="text" placeholder="Actor" >
                     
                     
                 </div>
@@ -49,7 +68,7 @@
             <div class="form-group row mt-5">
                 <label class="col-12 col-form-label">&nbsp;</label>
                 <div class="input-group col-md">
-                    <button (click)="guardar()" type="submit" class="btn btn-outline-dark btn-block"> Guardar </button>
+                    <button type="submit" class="btn btn-outline-dark btn-block"> Guardar </button>
                 </div>
             </div>
 
