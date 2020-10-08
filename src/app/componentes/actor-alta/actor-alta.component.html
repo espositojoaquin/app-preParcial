@@ -1,1 +1,84 @@
-<p>actor-alta works!</p>
+<app-menu></app-menu>
+<div class="row">
+    <div class="col-6 p-5 ld ld-slide-ttb-in">
+        <h1>Alta de Actores</h1>
+        <hr>
+        <form [formGroup]="form" (ngSubmit)="guardar()">
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label" >Nombre</label>
+                <div class="col">
+                    <input formControlName="nombre" name="nombre" class="form-control" type="text" placeholder="Nombre" 
+                       >
+                       <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="alert-danger">
+                        <div *ngIf="nombre.errors.required">
+                            Nombre es requerido
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label" >Apellido</label>
+                <div class="col">
+                    <input formControlName="apellido" name="nombre" class="form-control" type="text" placeholder="Apellido" 
+                       >
+                       <div *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)" class="alert-danger">
+                        <div *ngIf="apellido.errors.required">
+                            Apellido es requerido
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="form-group row ">
+                <label class="col-4 col-form-label">sexo</label>
+                <div class="col">
+                    <select class="form-control" name="tipo" formControlName="sexo" >
+                        <option value="masculino"> masculino </option>
+                        <option value="femenino"> femenino </option>
+                    </select>
+                    <div *ngIf="sexo.invalid && (sexo.dirty || sexo.touched)" class="alert-danger">
+                        <div *ngIf="sexo.errors.required">
+                            sexo es requerido
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label" >Fecha de Nacimiento</label>
+                <div class="col">
+                    <input formControlName="fecha" name="fecha" class="form-control" type="date" placeholder="Fecha de Nacimiento" >
+                    <div *ngIf="fecha.invalid && (fecha.dirty || fecha.touched)" class="alert-danger">
+                        <div *ngIf="fecha.errors.required">
+                            fecha es requerido
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label" >Nacionalidad</label>
+                <div class="col">
+                    <input formControlName="nacionalidad" name="publico" class="form-control" type="text" placeholder="Nacionalidad" >
+                    <div *ngIf="nacionalidad.invalid && (nacionalidad.dirty || nacionalidad.touched)" class="alert-danger">
+                        <div *ngIf="nacionalidad.errors.required">
+                            Nacionalidad es requerida
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group row mt-5">
+                <label class="col-12 col-form-label">&nbsp;</label>
+                <div class="input-group col-md">
+                    <button type="submit" class="btn btn-outline-dark btn-block"> Guardar </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-5 p-5">
+      <app-tabla-paises (PaisSeleccionado)="paisSeleccionado($event)"></app-tabla-paises>
+    </div>
+</div>
+<!-- <app-tabla-paises></app-tabla-paises> -->

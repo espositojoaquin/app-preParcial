@@ -32,6 +32,8 @@ import { ListaProductosComponent } from './componentes/lista-productos/lista-pro
 import { BotonEliminarComponent } from './componentes/boton-eliminar/boton-eliminar.component';
 import { BusquedaProductoComponent } from './componentes/busqueda-producto/busqueda-producto.component';
 import { BuscadorComponent } from './componentes/buscador/buscador.component';
+import { PaisesListadoComponent } from './componentes/paises-listado/paises-listado.component';
+import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { BuscadorComponent } from './componentes/buscador/buscador.component';
     ListaProductosComponent,
     BotonEliminarComponent,
     BusquedaProductoComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    PaisesListadoComponent,
+    TablaPaisesComponent
   ],
   imports: [
     BrowserModule,
