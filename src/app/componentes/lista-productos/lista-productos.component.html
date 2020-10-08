@@ -1,0 +1,26 @@
+<div class="table-responsive-sm">
+    <table class="table table-hover table-bordered ld ld-rush-ltr-in">
+        <thead>
+          <tr  class="bg-primary" style="color: white;">
+            <th>Nombre</th>
+            <th >tipo</th>
+            <th >Fecha de Vencimiento</th>
+            <th >Precio</th>
+            <th >foto</th>
+            <th>Evento</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let prod of listado; let i = index" (click)="seleccionarProductos(prod)">
+            <td>{{prod.descripcion}} </td>
+            <td>{{prod.tipo}} </td>
+            <td>{{prod.fechaV}} </td>
+            <td>{{prod.precio}} </td>
+            <td> <img [src]="prod.foto" alt="" width="100" height="100"></td>
+            <td><app-boton-eliminar [producto]="prod"></app-boton-eliminar></td>
+          </tr>     
+        
+        </tbody>
+      </table>
+  
+  </div>

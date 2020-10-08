@@ -27,6 +27,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
  
 import { ToastrModule } from 'ngx-toastr';
 import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
+import { ProductosComponent } from './componentes/productos/productos.component';
+import { ListaProductosComponent } from './componentes/lista-productos/lista-productos.component';
+import { BotonEliminarComponent } from './componentes/boton-eliminar/boton-eliminar.component';
+import { BusquedaProductoComponent } from './componentes/busqueda-producto/busqueda-producto.component';
+import { BuscadorComponent } from './componentes/buscador/buscador.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,12 @@ import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.compone
     TablaPeliculaComponent,
     DetallePeliculasComponent,
     TablaActorComponent,
-    BienvenidoComponent
+    BienvenidoComponent,
+    ProductosComponent,
+    ListaProductosComponent,
+    BotonEliminarComponent,
+    BusquedaProductoComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,

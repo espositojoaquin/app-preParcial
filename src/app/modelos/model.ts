@@ -18,3 +18,12 @@ export class PeliculaModel {
     actor?: ActorModel = new ActorModel();
     estado:number;
 }
+
+export class Productos{
+    id:number;
+    descripcion:string;
+    tipo:string;
+    fechaV:string;
+    precio:number;
+    foto:string;
+}

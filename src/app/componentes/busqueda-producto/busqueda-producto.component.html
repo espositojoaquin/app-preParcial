@@ -1,0 +1,24 @@
+<app-menu></app-menu>
+<app-buscador (eventoDatoProducto)="tomarProducto($event)"></app-buscador>
+
+<div class="centrar">
+    <div class="card border-dark mb-3 animated fadeIn faster ld ld-jump-in detalle" style="max-width: 540px;" *ngIf="producto">
+        <div class="colum no-gutters" style="width: auto;">
+            <div class="col-md-12" style="background-color: burlywood;">
+                <div class="col-md-12" >
+                    <img [src]="producto.foto"  class="img-thumbnail imagenDeMenu" alt="Avatar" width="500"  height="250">
+                </div>
+                <div class="card-body text-center w-100">
+                    <h2 class="card-title"> {{ producto.descripcion | uppercase }} </h2>
+                    <h5 class="card-title"> {{ producto.tipo | uppercase }} </h5>
+                    <p class="card-text"> El precio es: {{ producto.precio}} </p>
+                    <p class="card-text"> Vende el : {{ producto.fechaV}} </p>
+                    <button class="btn btn-danger btn-block"  (click)="cerrar()">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

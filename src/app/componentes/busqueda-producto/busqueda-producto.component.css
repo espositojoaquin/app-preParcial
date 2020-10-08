@@ -1,0 +1,16 @@
+.imagenDeMenu{
+    margin-bottom: 2rem;
+    }
+
+    .detalle{
+        width: 20rem;
+        height: 8rem;
+    }
+
+.centrar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}

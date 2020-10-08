@@ -1,0 +1,32 @@
+table{
+    margin-top: 5rem;
+    border-radius: 2rem;
+    -webkit-box-shadow: -2px 7px 47px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px 7px 47px -10px rgba(0,0,0,0.75);
+    box-shadow: -2px 7px 47px -10px rgba(0,0,0,0.75);
+    text-align: center;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+.tabla{
+    width: 60%;
+}
+.detalle{
+    margin-top: 5rem;
+    width: 30%;
+}
+@media screen and (max-width: 800px)
+{
+   table{
+       width: auto;
+       height: auto;
+   }
+   .container{
+       justify-content: left;
+   }
+}

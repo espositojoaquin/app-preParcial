@@ -1,0 +1,20 @@
+<div class="buscador">
+    <form class="form-block my-2 my-lg-0">
+        <input  class="form-control mr-sm-2 block" 
+                type="search" 
+                placeholder="Buscar Producto" 
+                aria-label="Search"
+                #buscador
+                (keyup.enter)="buscarProducto(buscador.value)">
+                <div class="buscador">
+                    <button class="btn btn-outline-success my-2 my-sm-0" 
+                            type="button"
+                            (click)="buscarProducto(buscador.value)">
+                            Buscar Producto
+                    </button>
+
+                </div>
+     </form>
+
+</div>
+
