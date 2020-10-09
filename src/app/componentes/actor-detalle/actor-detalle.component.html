@@ -1,0 +1,22 @@
+
+<div class="card border-dark mb-3 animated fadeIn faster ld ld-jump-in" style="max-width: 540px; margin: 2rem;" *ngIf="actor">
+    <div class="colum no-gutters" style="width: auto;">
+        <h2 *ngIf="borrado === 1">¿Desea borrar este Usuario?</h2>
+        <div class="col-md-12" >
+            <img [src]="actor.foto"  class="img-thumbnail imagenDeMenu" alt="Avatar" width="500"  height="250">
+        </div>
+        <div class="col-md-12">
+            <div class="card-body text-center w-100">
+                <h2 class="card-title"> {{ actor.nombre | uppercase }} </h2>
+                <h5 class="card-title"> {{ actor.apellido | uppercase }} </h5>
+                <p class="card-text"> Sexo: {{ actor.sexo}} </p>
+                <p class="card-text"> Nacionalidad: {{ actor.nacionalidad }}</p>
+                <p class="card-text"> Fecha de nacimiento: {{ actor.fecha }}</p>
+
+                <button class="btn btn-danger btn-block" *ngIf="borrado === 1" (click)="borrarActor(actor.id)">
+                    <i class="fas fa-trash"></i> Borrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

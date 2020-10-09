@@ -16,7 +16,7 @@ export class TablaActorComponent implements OnInit {
   ngOnInit(): void {
     this.datos.getActores().subscribe(res => {
       console.info("res", res);
-      this.listado = res;
+      this.listado = res.filter(res =>res.estado == 1);
     })
   }
 

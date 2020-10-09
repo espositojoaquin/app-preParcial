@@ -17,7 +17,7 @@ export class DataService {
 
   constructor(private db: AngularFirestore) { 
     this.dbPelisRef = this.db.collection("peliculas");
-    this.dbActores = this.db.collection("actores");
+    this.dbActores = this.db.collection("actoress");
     this.dbPaises = this.db.collection("paises");
   } 
 
@@ -56,7 +56,7 @@ export class DataService {
        console.log("info id");
        let id = res.size + 1;
        console.log(id);
-        this.db.collection("actores").doc(id.toString()).set({
+        this.db.collection("actoress").doc(id.toString()).set({
          nombre: actores.nombre,
          id:id,
          estado:1,
@@ -106,6 +106,12 @@ export class DataService {
   deleteMovie(id:string)
   {  
     return this.dbPelisRef.doc(id.toString()).update({
+      estado:0
+    })
+  }
+  deleteActor(id:string)
+  {  
+    return this.dbActores.doc(id.toString()).update({
       estado:0
     })
   }

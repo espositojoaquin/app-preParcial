@@ -1,1 +1,7 @@
-<p>actor-listado works!</p>
+<app-menu></app-menu>
+<app-tabla-actor (ActorSeleccionado)="tomarActorParaDetalles($event)"></app-tabla-actor>
+<div class="row">
+    <app-actor-detalle (eventoBorrarActor)="borrarActor($event)" [actor]="actor" [borrado]="1"></app-actor-detalle>
+    <app-actor-detalle (eventoBorrarActor)="borrarActor($event)" [actor]="actor" [borrado]="0"></app-actor-detalle>
+
+</div>
