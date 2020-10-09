@@ -59,7 +59,7 @@
             <div class="form-group row">
                 <label class="col-4 col-form-label" >Nacionalidad</label>
                 <div class="col">
-                    <input formControlName="nacionalidad" name="publico" class="form-control" type="text" placeholder="Nacionalidad" >
+                    <input  disabled=true; formControlName="nacionalidad" name="publico" class="form-control" type="text" placeholder="Nacionalidad" >
                     <div *ngIf="nacionalidad.invalid && (nacionalidad.dirty || nacionalidad.touched)" class="alert-danger">
                         <div *ngIf="nacionalidad.errors.required">
                             Nacionalidad es requerida
