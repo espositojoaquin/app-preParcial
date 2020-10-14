@@ -35,6 +35,7 @@ import { BuscadorComponent } from './componentes/buscador/buscador.component';
 import { PaisesListadoComponent } from './componentes/paises-listado/paises-listado.component';
 import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.component';
 import { ActorDetalleComponent } from './componentes/actor-detalle/actor-detalle.component';
+import { UpdateActorComponent } from './componentes/update-actor/update-actor.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { ActorDetalleComponent } from './componentes/actor-detalle/actor-detalle
     BuscadorComponent,
     PaisesListadoComponent,
     TablaPaisesComponent,
-    ActorDetalleComponent
+    ActorDetalleComponent,
+    UpdateActorComponent
   ],
   imports: [
     BrowserModule,

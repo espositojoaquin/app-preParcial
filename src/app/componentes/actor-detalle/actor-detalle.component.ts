@@ -14,6 +14,7 @@ export class ActorDetalleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
    borrarActor(id: string) {
@@ -22,3 +23,4 @@ export class ActorDetalleComponent implements OnInit {
 }
 
 }
+

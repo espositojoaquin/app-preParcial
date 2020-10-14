@@ -115,5 +115,16 @@ export class DataService {
       estado:0
     })
   }
+  updateActor(actor:ActorModel)
+  { 
+    return this.dbActores.doc(actor.id.toString()).update({
+      nombre: actor.nombre,
+      apellido: actor.apellido,
+      sexo: actor.sexo,
+      nacionalidad: actor.nacionalidad,
+      fecha: actor.fecha
+    })
+
+  }
 
 }

@@ -19,7 +19,7 @@ export class TablaActorComponent implements OnInit {
       this.listado = res.filter(res =>res.estado == 1);
     })
   }
-
+ 
   seleccionarActor(actor:ActorModel) {
     console.log(actor);
     this.ActorSeleccionado.emit(actor);
