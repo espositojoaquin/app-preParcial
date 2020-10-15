@@ -38,6 +38,7 @@ import { ActorDetalleComponent } from './componentes/actor-detalle/actor-detalle
 import { UpdateActorComponent } from './componentes/update-actor/update-actor.component';
 import { ActorPeliculaComponent } from './componentes/actor-pelicula/actor-pelicula.component';
 import { PeliculasDeActorComponent } from './componentes/peliculas-de-actor/peliculas-de-actor.component';
+import { DetallePaisComponent } from './componentes/detalle-pais/detalle-pais.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { PeliculasDeActorComponent } from './componentes/peliculas-de-actor/peli
     ActorDetalleComponent,
     UpdateActorComponent,
     ActorPeliculaComponent,
-    PeliculasDeActorComponent
+    PeliculasDeActorComponent,
+    DetallePaisComponent
   ],
   imports: [
     BrowserModule,

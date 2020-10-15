@@ -7,6 +7,7 @@ export class ActorModel {
     fecha: string;
     nacionalidad:string;
     foto: string;
+    estado:number;
 }
 
 export class PeliculaModel {
@@ -27,4 +28,10 @@ export class Productos{
     fechaV:string;
     precio:number;
     foto:string;
+}
+
+export class Nacionalidad{
+    id:number;
+    nombre:string;
+    bandera:string;
 }
