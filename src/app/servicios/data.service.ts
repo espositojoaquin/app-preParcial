@@ -31,7 +31,8 @@ export class DataService {
         nombre: pelicula.nombre,
         id:id,
         estado:1,
-        actor:pelicula.actor.nombre +" "+ pelicula.actor.apellido,
+       // actor:pelicula.actor.nombre +" "+ pelicula.actor.apellido,
+       actor: pelicula.actor,
         fecha: pelicula.fecha,
         publico:pelicula.publico,
         tipo:pelicula.tipo,
@@ -69,22 +70,21 @@ export class DataService {
      })
    }
 
-  pelisAdd(id:string,pelicula:PeliculaModel){
+  // pelisAdd(id:string,pelicula:PeliculaModel){
     
-  return this.db.collection("peliculas").doc(id.toString()).set({
-      nombre: pelicula.nombre,
-      id:id,
-      estado:1,
-      actor:pelicula.actor.nombre +" "+ pelicula.actor.apellido,
-      fecha: pelicula.fecha,
-      publico:pelicula.publico,
-      tipo:pelicula.tipo,
-      foto: "https://ignaciosantiago.com/wp-content/uploads/2013/08/Sabes-cuando-es-la-calidad-de-una-pelicula-en-internet-mejor-o-peor-2.jpg"
-     })
-  }
+  // return this.db.collection("peliculas").doc(id.toString()).set({
+  //     nombre: pelicula.nombre,
+  //     id:id,
+  //     estado:1,
+  //     actor:pelicula.actor.nombre +" "+ pelicula.actor.apellido,
+  //     fecha: pelicula.fecha,
+  //     publico:pelicula.publico,
+  //     tipo:pelicula.tipo,
+  //     foto: "https://ignaciosantiago.com/wp-content/uploads/2013/08/Sabes-cuando-es-la-calidad-de-una-pelicula-en-internet-mejor-o-peor-2.jpg"
+  //    })
+  // }
 
   getPelis() {
-   // return this.dbPelisRef.ref.where('estado','==','1').get();
    return this.dbPelisRef.valueChanges();
   }
 

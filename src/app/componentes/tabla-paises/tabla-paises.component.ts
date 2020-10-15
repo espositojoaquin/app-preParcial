@@ -18,7 +18,8 @@ export class TablaPaisesComponent implements OnInit {
       this.listado = res;
     })
   }
-
+ 
+  
   seleccionarPais(pais:any) {
     console.log(pais);
     this.PaisSeleccionado.emit(pais);

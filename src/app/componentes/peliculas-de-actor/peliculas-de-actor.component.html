@@ -1,0 +1,21 @@
+<div class="div1" *ngIf="peliculas">
+    <table *ngIf="cantidad"  class="table table-hover table-bordered animated fadeIn faster ld ld-slide-ttb-in">
+        <thead>
+          <tr class="bg-primary" style="color: white;">
+              <th>Portada</th>
+            <th>Nombre</th>
+          </tr>
+        </thead>
+        <tbody >
+         <tr *ngFor="let pelicula of peliculas;">
+             <td> <img [src]="pelicula.foto" alt="" width="100" height="100"></td>
+             <td>{{pelicula.nombre}} </td>
+          </tr>     
+        </tbody>
+      </table>
+
+      <div *ngIf="!cantidad" class="container ld ld-slide-ttb-in">
+        <h2>No participó en ninguna película</h2>
+      </div>
+      
+    </div>

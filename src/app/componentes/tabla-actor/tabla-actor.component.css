@@ -1,5 +1,5 @@
 table{
-    margin-top: 5rem;
+    /*margin-top: 5rem;*/
     border-radius: 2rem;
     -webkit-box-shadow: -2px 7px 47px -10px rgba(0,0,0,0.75);
     -moz-box-shadow: -2px 7px 47px -10px rgba(0,0,0,0.75);
@@ -7,7 +7,7 @@ table{
     
 }
 .div1{
-    overflow:scroll;
+     overflow:auto;
      height:25rem;
      
 }
