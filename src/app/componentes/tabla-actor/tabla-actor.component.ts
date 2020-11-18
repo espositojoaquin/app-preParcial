@@ -1,4 +1,4 @@
-import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter, Input } from '@angular/core';
 import { DataService} from "../../servicios/data.service";
 import { ActorModel } from "../../modelos/model";
 
@@ -9,8 +9,12 @@ import { ActorModel } from "../../modelos/model";
 })
 export class TablaActorComponent implements OnInit {
   
+  @Input() mostrarB:boolean; 
   listado:Array<ActorModel>
   @Output() ActorSeleccionado: EventEmitter <ActorModel> = new EventEmitter();
+  @Output() mostrarE: EventEmitter <boolean> = new EventEmitter();
+  @Output() mostrarD: EventEmitter <boolean> = new EventEmitter();
+  @Output() mostrarM: EventEmitter <boolean> = new EventEmitter();
   constructor(private datos:DataService) { }
 
   ngOnInit(): void {
@@ -24,5 +28,25 @@ export class TablaActorComponent implements OnInit {
     console.log(actor);
     this.ActorSeleccionado.emit(actor);
 }
+
+    mostrar(a:string,actor:any)
+    { 
+      this.ActorSeleccionado.emit(actor);
+        switch(a)
+        {  
+          case "E":
+            this.mostrarE.emit(true);
+            break;
+
+          case "D":
+            this.mostrarD.emit(true);
+            
+            break;
+
+          case "M":
+            this.mostrarM.emit(true);
+            break;
+       }
+    }
 
 }

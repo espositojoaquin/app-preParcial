@@ -9,6 +9,8 @@ import { ActorModel } from "../../modelos/model";
 export class ActorDetalleComponent implements OnInit {
   
   @Input() actor: ActorModel;
+  @Input()  mostrarE:boolean;
+  @Input() mostrarD:boolean;
   @Input() borrado: number;
   @Output() eventoBorrarActor = new EventEmitter<string>();
   constructor() { }

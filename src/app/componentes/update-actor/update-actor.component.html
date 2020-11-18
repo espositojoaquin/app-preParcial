@@ -1,4 +1,4 @@
-<div class="card border-dark mb-3 animated fadeIn faster ld ld-jump-in container" *ngIf="actor" style="margin-top: 2rem;">
+<div class="card border-dark mb-3 animated fadeIn faster ld ld-jump-in container" *ngIf="actor && mostrarM" style="margin-top: 2rem;">
    
     <div  style="height: auto;" >
         <!-- <div class="row" style="justify-content: center;" >
@@ -8,16 +8,20 @@
             <div class="card-body text-center w-100">
                 <form [formGroup]="form" (ngSubmit)="guardar()">
 
-                    <div class="form-group row">
-                        <label class="col-4 col-form-label" >Nombre</label>
-                        <div class="col">
+                    <div style="display: flex; justify-content: space-between;" class="form-group row">
+                        <!-- <label class="col-6 col-form-label" >Nombre</label> -->
+                        <div style="width: 50%;" class="row">
                             <input formControlName="nombre" name="nombre" class="form-control" type="text" placeholder="Nombre" 
                                >
-                              
-                           
+                
+                        </div>
+                        <div style="width: 50%;" class="row">
+                            <input formControlName="apellido" name="nombre" class="form-control" type="text" placeholder="Apellido" 
+                               >
+                
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label class="col-4 col-form-label" >Apellido</label>
                         <div class="col">
                             <input formControlName="apellido" name="nombre" class="form-control" type="text" placeholder="Apellido" 
@@ -25,31 +29,39 @@
                               
                            
                         </div>
-                    </div>
-                    <div class="form-group row ">
-                        <label class="col-4 col-form-label">sexo</label>
-                        <div class="col">
+                    </div> -->
+                    <div style="display: flex; justify-content: space-between;" class="form-group row ">
+                        <div style="width: 50%;" class="row">
+                            <label class="col-4 col-form-label">sexo</label>
                             <select class="form-control" name="tipo" formControlName="sexo" >
                                 <option value="masculino"> masculino </option>
                                 <option value="femenino"> femenino </option>
                             </select>
                         </div>
+                        <div  style="width: 50%;" class="row">
+                            <label class="col-4 col-form-label" >F.N</label>
+                            <input formControlName="fecha" name="fecha" class="form-control" type="date" placeholder="Fecha de Nacimiento" >
+                           
+                        </div>
                     </div>
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label class="col-4 col-form-label" >Fecha de Nacimiento</label>
                         <div class="col">
                             <input formControlName="fecha" name="fecha" class="form-control" type="date" placeholder="Fecha de Nacimiento" >
                            
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group row">
-                        <label class="col-4 col-form-label" >Nacionalidad</label>
-                        <div class="col">
-                            <input   formControlName="nacionalidad" name="publico" class="form-control" type="text" placeholder="Nacionalidad" >
-                           
+                        <!-- <label class="col-4 col-form-label" >Nacionalidad:</label> -->
+                        
+                        <div class="col" style="height: 7rem; overflow: hidden;">
+                            
+                            <app-tabla-paises (PaisSeleccionado)="paisSeleccionado($event)"></app-tabla-paises>
+                            
                         </div>
-        
+                        
                     </div>
+                    <label class="col-4 col-form-label"  >{{pais}}</label>
                     <div class="form-group row mt-5">
                         <div class="input-group col-md">
                             <button type="submit" class="btn btn-outline-dark btn-block"> Modificar </button>

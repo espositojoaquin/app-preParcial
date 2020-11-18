@@ -40,6 +40,9 @@ import { ActorPeliculaComponent } from './componentes/actor-pelicula/actor-pelic
 import { PeliculasDeActorComponent } from './componentes/peliculas-de-actor/peliculas-de-actor.component';
 import { DetallePaisComponent } from './componentes/detalle-pais/detalle-pais.component';
 
+//http
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,7 +80,8 @@ import { DetallePaisComponent } from './componentes/detalle-pais/detalle-pais.co
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    HttpClientModule,
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

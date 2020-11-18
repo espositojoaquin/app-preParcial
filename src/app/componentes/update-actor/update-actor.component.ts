@@ -12,9 +12,12 @@ import { ToastrService } from 'ngx-toastr';
 export class UpdateActorComponent implements OnInit {
 
   @Input() actor: ActorModel;
-  @Input() borrado: number;
+  @Input() mostrarM: boolean;
   @Output() eventoUpdateActor = new EventEmitter<string>();
   form:FormGroup;
+  paises:any;
+  pais:any;
+ 
   constructor(private dataSrv: DataService,private toast:ToastrService,private fb:FormBuilder) { }
 
   ngOnInit(): void {
@@ -25,6 +28,9 @@ export class UpdateActorComponent implements OnInit {
       sexo: ['', Validators.required],
       nacionalidad: ['', Validators.required]
     }​​);
+    this.dataSrv.getPaisesService().subscribe(res =>{
+      this.paises = res;
+    })
     
   }
 
@@ -40,35 +46,30 @@ export class UpdateActorComponent implements OnInit {
     this.actor = null; 
 }*/
 
-guardar()
-{ 
-      const {​​ nombre, apellido, sexo, fecha,nacionalidad }​​ = this.form.value;
-      this.actor.nombre = nombre? nombre:this.actor.nombre;
-      this.actor.apellido = apellido? apellido:this.actor.apellido;
-      this.actor.sexo = sexo?sexo:this.actor.sexo;
-      this.actor.fecha = fecha?fecha:this.actor.fecha;
-      this.actor.nacionalidad = nacionalidad?nacionalidad:this.actor.nacionalidad;
-    
-      console.info(this.actor);
-      let a=this.dataSrv.updateActor(this.actor)
-        if(a)
-        {
-          this.toast.success("Actor Modificado con éxito");
-          this.actor = null; 
-        }
-      // if(nombre && apellido && sexo && fecha && nacionalidad) {​​
-      //   let a=this.dataSrv.addActores(this.actor)
-      //   if(a)
-      //   {
-      //     this.toast.success("actor Agregada con éxito");
-      //   }
-      // }
-      // else
-      // {
-      //   this.toast.error("Datos inválidos");
+    paisSeleccionado(item:any)
+    { 
+      
+      this.nacionalidad.setValue(item);
+      this.pais = item.name;
+    }
 
-      // }
+    guardar()
+    { 
+          const {​​ nombre, apellido, sexo, fecha,nacionalidad }​​ = this.form.value;
+          this.actor.nombre = nombre? nombre:this.actor.nombre;
+          this.actor.apellido = apellido? apellido:this.actor.apellido;
+          this.actor.sexo = sexo?sexo:this.actor.sexo;
+          this.actor.fecha = fecha?fecha:this.actor.fecha;
+         this.actor.nacionalidad = nacionalidad?nacionalidad:this.actor.nacionalidad;
+        
+          console.info(this.actor);
+          let a=this.dataSrv.updateActor(this.actor)
+            if(a)
+            {
+              this.toast.success("Actor Modificado con éxito");
+              this.actor = null; 
+            }
 
-}
+    }
 
 }

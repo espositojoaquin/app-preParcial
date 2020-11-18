@@ -3,6 +3,7 @@ import { Injectable, Query } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth'
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { ActorModel, PeliculaModel } from "../modelos/model";
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class DataService {
   dbPaises: AngularFirestoreCollection<any>;
 
 
-  constructor(private db: AngularFirestore) { 
+  constructor(private db: AngularFirestore, private http:HttpClient) { 
     this.dbPelisRef = this.db.collection("peliculas");
     this.dbActores = this.db.collection("actoress");
     this.dbPaises = this.db.collection("paises");
@@ -31,8 +32,7 @@ export class DataService {
         nombre: pelicula.nombre,
         id:id,
         estado:1,
-       // actor:pelicula.actor.nombre +" "+ pelicula.actor.apellido,
-       actor: pelicula.actor,
+        actor: pelicula.actor,
         fecha: pelicula.fecha,
         publico:pelicula.publico,
         tipo:pelicula.tipo,
@@ -91,6 +91,11 @@ export class DataService {
   getActores(){
    return this.dbActores.valueChanges();
 
+  }
+
+  getPaisesService()
+  {
+    return this.http.get("https://restcountries.eu/rest/v2");
   }
 
   getPaises()

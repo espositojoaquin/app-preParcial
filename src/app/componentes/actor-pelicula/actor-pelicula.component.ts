@@ -12,13 +12,15 @@ export class ActorPeliculaComponent implements OnInit {
 
   actor:ActorModel;
   lista:Array<PeliculaModel>;
-  nacionalidad:Nacionalidad;
+  nacionalidad:any;
   mostrarPelis = false;
+
 
  constructor(private data:DataService,private toast:ToastrService) { }
 
  tomarActorParaDetalles(actor: ActorModel) {
   this.actor = actor;
+  this.nacionalidad = this.actor.nacionalidad;
 }
 
 peliculas()
@@ -28,9 +30,9 @@ peliculas()
     this.mostrarPelis = this.lista.length > 0 ? true:false;
   })
 
-  this.data.getPaises().subscribe(res=>{
-    this.nacionalidad = (res.filter(na => na.nombre == this.actor.nacionalidad))[0];
-  })
+  // this.data.getPaises().subscribe(res=>{
+  //   this.nacionalidad = (res.filter(na => na.nombre == this.actor.nacionalidad.name))[0];
+  // })
 }
 
   ngOnInit(): void {

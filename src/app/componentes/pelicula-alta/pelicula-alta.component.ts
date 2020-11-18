@@ -19,6 +19,7 @@ export class PeliculaAltaComponent implements OnInit {
   hola:string;
   form:FormGroup;
 
+
   actorSeleccionado(actor:ActorModel)
   { 
     this.actor = actor;
@@ -61,6 +62,10 @@ export class PeliculaAltaComponent implements OnInit {
       cantidad_publico: ['', Validators.required,Validators.min(0),Validators.max(1000)],
       actor: ['', Validators.required]
     }​​);
+
+  
+
+
   }
 
   get nombre() {​​ return this.form.get('nombre'); }​​

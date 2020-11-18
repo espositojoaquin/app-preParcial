@@ -36,9 +36,9 @@ export class ActorAltaComponent implements OnInit {
   paisSeleccionado(dato:any)
   { 
     this.pais=dato;
-    this.actor.nacionalidad = dato.nombre;
+    this.actor.nacionalidad = dato.name;
     this.form.patchValue({​​
-      nacionalidad: dato.nombre
+      nacionalidad: dato.name,
     }​​);
     
   }
@@ -54,26 +54,36 @@ export class ActorAltaComponent implements OnInit {
 }
   */
 
-  guardar()
-  { 
+ guardar()
+ { 
    const {​​ nombre, apellido, sexo, fecha,nacionalidad }​​ = this.form.value;
-   this.actor.nombre = nombre;
-   this.actor.apellido = apellido;
-   this.actor.sexo = sexo;
-   this.actor.fecha = fecha;
-   this.actor.nacionalidad = this.pais.nombre;
-   if(nombre && apellido && sexo && fecha && nacionalidad) {​​
-    let a=this.dataSrv.addActores(this.actor)
-     if(a)
-     {
-       this.toast.success("actor Agregada con éxito");
-     }
-   }
-   else
-   {
-    this.toast.error("Datos inválidos");
+  if(nombre == "" || apellido == "" || sexo == "" || fecha == "" || nacionalidad == "")
+  {
+   this.toast.error("Datos inválidos");
+    
+  }
+  else
+  {
+    this.actor.nombre = nombre;
+    this.actor.apellido = apellido;
+    this.actor.sexo = sexo;
+    this.actor.fecha = fecha;
+    this.actor.nacionalidad = this.pais;
+    if(nombre && apellido && sexo && fecha && nacionalidad) {​​
+     let a=this.dataSrv.addActores(this.actor)
+      if(a)
+      {
+        this.toast.success("actor Agregada con éxito");
+      }
+    }
+    else
+    {
+     this.toast.error("Datos inválidos");
+ 
+    }
 
-   }
+  }
+
 
   }
 

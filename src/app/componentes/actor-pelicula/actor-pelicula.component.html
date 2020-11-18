@@ -1,10 +1,9 @@
 <app-menu></app-menu>
-<app-tabla-actor (click)="peliculas()" (ActorSeleccionado)="tomarActorParaDetalles($event)"></app-tabla-actor>
+<app-tabla-actor  [mostrarB]="false" (click)="peliculas()" (ActorSeleccionado)="tomarActorParaDetalles($event)"></app-tabla-actor>
 <div class="container">
+    
     <app-peliculas-de-actor [peliculas]="lista" [cantidad]="mostrarPelis"></app-peliculas-de-actor>
-    <app-actor-detalle  [actor]="actor" [borrado]="0"></app-actor-detalle>
+    <app-actor-detalle [mostrarD]="true" [actor]="actor" [borrado]="0"></app-actor-detalle>
     <app-detalle-pais [pais]="nacionalidad"></app-detalle-pais>
-    <!-- <app-actor-detalle (eventoBorrarActor)="borrarActor($event)" [actor]="actor" [borrado]="0"></app-actor-detalle> -->
-    <!-- <app-update-actor [actor]="actor"></app-update-actor> -->
 
 </div>

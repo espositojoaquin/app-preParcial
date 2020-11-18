@@ -1,11 +1,11 @@
 <div class="card border-dark mb-3 animated fadeIn faster container"  *ngIf="pais">
     <div class="colum no-gutters ld ld-slide-ttb-in">
         <div class="col-md-12" >
-            <img [src]="pais.foto"  class="img-thumbnail imagenDeMenu" alt="Avatar" width="500"  height="250">
+            <img [src]="pais.flag"  class="img-thumbnail imagenDeMenu" alt="Avatar" width="500"  height="250">
         </div>
         <div class="col-md-12">
             <div class="card-body text-center w-100">
-                <h2 class="card-title"> {{ pais.nombre | uppercase }} </h2>
+                <h2 class="card-title"> {{ pais.name | uppercase }} </h2>
                 <!-- <h5 class="card-title"> {{ pelicula.tipo | uppercase }} </h5>
                 <p class="card-text"> Se estrenó el día: {{ pelicula.fecha}} </p>
                 <p class="card-text"> Fue visto por: {{ pelicula.publico }} personas</p>

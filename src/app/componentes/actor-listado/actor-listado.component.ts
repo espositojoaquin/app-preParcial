@@ -12,6 +12,9 @@ import { ToastrService } from 'ngx-toastr';
 export class ActorListadoComponent implements OnInit {
   
   actor:ActorModel;
+  mostrarD:boolean;
+  mostrarE:boolean;
+  mostrarM:boolean;
 
  constructor(private data:DataService,private toast:ToastrService) { }
   
@@ -28,6 +31,34 @@ borrarActor(id:string)
 
    })
 
+}
+
+mostrar(op:string,item:boolean)
+{
+  switch(op)
+  {  
+    case "E":
+      this.mostrarE = item;
+      this.mostrarD = false;
+      this.mostrarM = false;
+
+      break;
+
+    case "D":
+      this.mostrarD = item;
+      this.mostrarE = false;
+      this.mostrarM = false;
+
+      
+      break;
+
+    case "M":
+      this.mostrarM = item;
+      this.mostrarD = false;
+      this.mostrarE = false;
+
+      break;
+ }
 }
 
   ngOnInit(): void {

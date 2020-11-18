@@ -8,14 +8,20 @@ import { DataService} from "../../servicios/data.service";
 })
 export class TablaPaisesComponent implements OnInit {
   
-  listado:Array<any>
+  //listado:Array<object>
+  listado:any
+
   @Output() PaisSeleccionado: EventEmitter <any> = new EventEmitter();
   constructor(private datos:DataService) { }
 
   ngOnInit(): void {
-    this.datos.getPaises().subscribe(res => {
-      console.info("res", res);
-      this.listado = res;
+    // this.datos.getPaises().subscribe(res => {
+    //   console.info("res", res);
+    //   this.listado = res;
+    // })
+
+    this.datos.getPaisesService().subscribe(res =>{
+      this.listado = res; 
     })
   }
  

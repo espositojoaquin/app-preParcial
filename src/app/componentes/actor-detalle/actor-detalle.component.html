@@ -1,19 +1,21 @@
 
-<div class="card border-dark mb-3 animated fadeIn faster ld ld-jump-in container" *ngIf="actor">
+<div class="card border-dark mb-3 animated fadeIn faster ld ld-jump-in container" *ngIf="actor && mostrarE || actor && mostrarD">
    
     <div  style="height: auto;" >
         <div class="row" style="justify-content: center;" >
             <img [src]="actor.foto"  class="img-thumbnail imagenDeMenu" style="width: 10rem; height: 10rem; border-radius: 100%; margin-top: 1rem;" alt="Avatar" width="500"  height="250">
         </div>
         <div class="col-md-12">
-            <div class="card-body text-center w-100">
+            <div style="height: auto; text-align: center;" >
                 <h2 class="card-title"> {{ actor.nombre + " " + actor.apellido | uppercase }} </h2>
                 <p > Sexo: {{ actor.sexo}} </p>
-                <p> Nacionalidad: {{ actor.nacionalidad }}</p>
+                <p> Nacionalidad: {{ actor.nacionalidad.name }}</p>
                 <p > Fecha de nacimiento: {{ actor.fecha }}</p>
-                <button class="btn btn-danger btn-block" *ngIf="borrado === 1" (click)="borrarActor(actor.id)">
+                <button style="margin-bottom: 1rem;" class="btn btn-danger btn-block" *ngIf="borrado === 1" (click)="borrarActor(actor.id)">
                     <i class="fas fa-trash"></i> Borrar
                 </button>
+                <br>
+                <br>
             </div>
         </div>
     </div>
