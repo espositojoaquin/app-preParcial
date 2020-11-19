@@ -1,5 +1,8 @@
 <app-menu></app-menu>
-<app-tabla-actor [mostrarB]="true" (ActorSeleccionado)="tomarActorParaDetalles($event)" (mostrarE)="mostrar('E',$event)" (mostrarM)="mostrar('M',$event)" (mostrarD)="mostrar('D',$event)"></app-tabla-actor>
+<div class="tabla">
+    <app-tabla-actor [mostrarB]="true" (ActorSeleccionado)="tomarActorParaDetalles($event)" (mostrarE)="mostrar('E',$event)" (mostrarM)="mostrar('M',$event)" (mostrarD)="mostrar('D',$event)"></app-tabla-actor>
+
+</div>
 <div  class="container">
     <app-actor-detalle (eventoBorrarActor)="borrarActor($event)" [mostrarE]="mostrarE" [actor]="actor" [borrado]="1"></app-actor-detalle>
     <app-actor-detalle (eventoBorrarActor)="borrarActor($event)"[mostrarD]="mostrarD"  [actor]="actor" [borrado]="0"></app-actor-detalle>

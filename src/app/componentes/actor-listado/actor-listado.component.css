@@ -4,3 +4,8 @@
     flex-wrap: nowrap;
     justify-content: center;
 }
+.tabla{
+    -webkit-box-shadow: -2px 7px 47px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px 7px 47px -10px rgba(0,0,0,0.75);
+    box-shadow: -2px 7px 47px -10px rgba(0,0,0,0.75);
+}

@@ -1,5 +1,5 @@
 
-<div class="card border-dark mb-3 animated fadeIn faster ld ld-jump-in" style="max-width: 540px;" *ngIf="pelicula">
+<div class="card border-dark mb-3 animated fadeIn faster ld ld-jump-in tabla" style="max-width: 540px;" *ngIf="pelicula">
     <div class="colum no-gutters" style="width: auto;">
         <div class="col-md-12" >
             <img [src]="pelicula.foto"  class="img-thumbnail imagenDeMenu" alt="Avatar" width="500"  height="250">
@@ -10,7 +10,7 @@
                 <h5 class="card-title"> {{ pelicula.tipo | uppercase }} </h5>
                 <p class="card-text"> Se estrenó el día: {{ pelicula.fecha}} </p>
                 <p class="card-text"> Fue visto por: {{ pelicula.publico }} personas</p>
-                <p class="card-text" *ngIf="pelicula.actor"> Actor: {{ pelicula.actor}} </p>
+                <p class="card-text" *ngIf="pelicula.actor"> Actor: {{ pelicula.actor.nombre}} {{pelicula.actor.apellido}} </p>
                 <button class="btn btn-danger btn-block" *ngIf="borrado === 1" (click)="borrarPelicula(pelicula.id)">
                     <i class="fas fa-trash"></i> Borrar
                 </button>

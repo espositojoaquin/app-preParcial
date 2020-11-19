@@ -23,50 +23,51 @@ export class DataService {
   } 
 
   addPelis(pelicula:PeliculaModel){
-   return this.db.collection("peliculas").get().subscribe(res =>{
-      console.log("info id");
-      let id = res.size + 1;
-      console.log(id);
-       this.db.collection("peliculas").doc(id.toString()).set({
+   return this.db.collection("peliculas").ref.orderBy('id',"desc").limit(1).get().then(res=>{    
+      res.forEach( a =>{
+        
+        console.log("info id");
+        let id = Number(a.id) + 1;
+        console.log(id);
+         this.db.collection("peliculas").doc(id.toString()).set({
+          nombre: pelicula.nombre,
+          id:id,
+          estado:1,
+          actor: pelicula.actor,
+          fecha: pelicula.fecha,
+          publico:pelicula.publico,
+          tipo:pelicula.tipo,
+          foto: "https://ignaciosantiago.com/wp-content/uploads/2013/08/Sabes-cuando-es-la-calidad-de-una-pelicula-en-internet-mejor-o-peor-2.jpg"
+         })
 
-        nombre: pelicula.nombre,
-        id:id,
-        estado:1,
-        actor: pelicula.actor,
-        fecha: pelicula.fecha,
-        publico:pelicula.publico,
-        tipo:pelicula.tipo,
-        foto: "https://ignaciosantiago.com/wp-content/uploads/2013/08/Sabes-cuando-es-la-calidad-de-una-pelicula-en-internet-mejor-o-peor-2.jpg"
-       })
+      })
+    
+    
     })
+    
   }
 
-    /*
-  export class ActorModel {
-    id: string;
-    nombre: string;
-    apellido: string;
-    sexo: string;
-    fecha: string;
-    nacionalidad:string;
-    foto: string;
-}
-  */
+
   addActores(actores:ActorModel){
-    return this.db.collection("actoress").get().subscribe(res =>{
-       console.log("info id");
-       let id = res.size + 1;
-       console.log(id);
-        this.db.collection("actoress").doc(id.toString()).set({
-         nombre: actores.nombre,
-         id:id,
-         estado:1,
-         apellido:actores.apellido,
-         sexo:actores.sexo,
-         fecha: actores.fecha,
-         nacionalidad:actores.nacionalidad,
-         foto: "https://ignaciosantiago.com/wp-content/uploads/2013/08/Sabes-cuando-es-la-calidad-de-una-pelicula-en-internet-mejor-o-peor-2.jpg"
-        })
+    return this.db.collection("actoress").ref.orderBy('id',"desc").limit(1).get().then(res =>{
+
+      res.forEach( a =>{
+        console.log("info id");
+        let id = Number(a.id) + 1;
+        console.log(id);
+         this.db.collection("actoress").doc(id.toString()).set({
+          nombre: actores.nombre,
+          id:id,
+          estado:1,
+          apellido:actores.apellido,
+          sexo:actores.sexo,
+          fecha: actores.fecha,
+          nacionalidad:actores.nacionalidad,
+          foto: "https://ignaciosantiago.com/wp-content/uploads/2013/08/Sabes-cuando-es-la-calidad-de-una-pelicula-en-internet-mejor-o-peor-2.jpg"
+         })
+
+
+      })
      })
    }
 

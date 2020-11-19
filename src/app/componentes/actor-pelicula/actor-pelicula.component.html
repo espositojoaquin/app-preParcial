@@ -1,5 +1,8 @@
 <app-menu></app-menu>
-<app-tabla-actor  [mostrarB]="false" (click)="peliculas()" (ActorSeleccionado)="tomarActorParaDetalles($event)"></app-tabla-actor>
+<div class="tabla">
+    <app-tabla-actor  [mostrarB]="false" (click)="peliculas()" (ActorSeleccionado)="tomarActorParaDetalles($event)"></app-tabla-actor>
+
+</div>
 <div class="container">
     
     <app-peliculas-de-actor [peliculas]="lista" [cantidad]="mostrarPelis"></app-peliculas-de-actor>

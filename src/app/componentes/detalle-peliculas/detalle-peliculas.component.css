@@ -1,5 +1,12 @@
 .imagenDeMenu{
     height: 55%;
-    margin-bottom: 2rem;
+   /* margin-bottom: 2rem;*/
     }
+    .tabla{
+        -webkit-box-shadow: -2px 7px 47px -10px rgba(0,0,0,0.75);
+        -moz-box-shadow: -2px 7px 47px -10px rgba(0,0,0,0.75);
+        box-shadow: -2px 7px 47px -10px rgba(0,0,0,0.75);
+        border-radius: 1rem;
+    }
+    
     
