@@ -67,9 +67,24 @@ export class UpdateActorComponent implements OnInit {
             if(a)
             {
               this.toast.success("Actor Modificado con éxito");
+              this.editActorPeli(this.actor);
               this.actor = null; 
             }
 
+    }
+
+
+    editActorPeli(actor:any)
+    {
+      let lista:any;
+      this.dataSrv.getPelis().subscribe(res =>{
+       lista = res.filter(pe => pe.actor.id == actor.id);
+
+       lista.forEach(item => {
+           this.dataSrv.updatePelis(actor,item.id);
+       });
+       // this.mostrarPelis = this.lista.length > 0 ? true:false;
+      })
     }
 
 }

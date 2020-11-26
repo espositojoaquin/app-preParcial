@@ -16,10 +16,12 @@ export class DataService {
   dbPaises: AngularFirestoreCollection<any>;
 
 
+
   constructor(private db: AngularFirestore, private http:HttpClient) { 
     this.dbPelisRef = this.db.collection("peliculas");
     this.dbActores = this.db.collection("actoress");
     this.dbPaises = this.db.collection("paises");
+
   } 
 
   addPelis(pelicula:PeliculaModel){
@@ -129,6 +131,14 @@ export class DataService {
       sexo: actor.sexo,
       nacionalidad: actor.nacionalidad,
       fecha: actor.fecha
+    })
+
+  }
+  updatePelis(actor:any,id:string)
+  {
+    return this.dbPelisRef.doc(id.toString()).update({
+      actor: actor,
+      
     })
 
   }

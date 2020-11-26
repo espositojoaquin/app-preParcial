@@ -23,6 +23,7 @@ export class TablaPaisesComponent implements OnInit {
 
     this.datos.getPaisesService().subscribe(res =>{
       this.listado = res; 
+     // this.listado = this.listado.filter(f => f.subregion == "South America");
     })
   }
  
