@@ -1,0 +1,20 @@
+<app-menu></app-menu>
+  
+<div class="buscador">
+   <input [(ngModel)]="filtro" style="width: 80%;"  class="form-control mr-sm-2 block"   placeholder="Buscar" type="text" name="" id="">   <i class="fas fa-search"></i>
+  
+  </div>
+
+<app-tabla-paises (PaisSeleccionado)="paisSelec($event)" [filtro]="filtro"></app-tabla-paises>
+
+<div class="row" style="margin-left:2rem;">
+    <div style="width: 50%; margin-top: 2rem;">
+        <app-tabla-actor *ngIf="lista" [lista]="lista" (ActorSeleccionado)="actorSeleccionado($event)"></app-tabla-actor>
+    
+    </div>
+    <div style="width: 30%;">
+        <app-actor-detalle *ngIf="actor" [actor]="actor" [mostrarD]="true" [borrar]="0"></app-actor-detalle>
+
+    </div>
+    
+</div>

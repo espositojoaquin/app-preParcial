@@ -1,4 +1,4 @@
-import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter, Input } from '@angular/core';
 import { DataService} from "../../servicios/data.service";
 
 @Component({
@@ -10,6 +10,7 @@ export class TablaPaisesComponent implements OnInit {
   
   //listado:Array<object>
   listado:any
+  @Input() filtro:any;
 
   @Output() PaisSeleccionado: EventEmitter <any> = new EventEmitter();
   constructor(private datos:DataService) { }

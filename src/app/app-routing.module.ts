@@ -11,6 +11,7 @@ import { ProductosComponent } from "./componentes/productos/productos.component"
 import { BusquedaProductoComponent } from "./componentes/busqueda-producto/busqueda-producto.component";
 import { PaisesListadoComponent } from "./componentes/paises-listado/paises-listado.component";
 import { ActorPeliculaComponent } from './componentes/actor-pelicula/actor-pelicula.component';
+import { PaisesActoresComponent } from './componentes/paises-actores/paises-actores.component';
 
 
 
@@ -28,7 +29,9 @@ const routes: Routes = [
  {path:'ActorAlta',component:ActorAltaComponent},
  {path:'ActorListado',component:ActorListadoComponent},
  {path:'Menu',component:MenuComponent},
- {path:'ActorPelicula',component:ActorPeliculaComponent}
+ {path:'ActorPelicula',component:ActorPeliculaComponent},
+ {path:'PaisActor',component:PaisesActoresComponent}
+
 
 ];
 

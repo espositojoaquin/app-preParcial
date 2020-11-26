@@ -11,17 +11,21 @@ export class TablaActorComponent implements OnInit {
   
   @Input() mostrarB:boolean; 
   listado:Array<ActorModel>
+  @Input() lista:Array<ActorModel>
   @Output() ActorSeleccionado: EventEmitter <ActorModel> = new EventEmitter();
   @Output() mostrarE: EventEmitter <boolean> = new EventEmitter();
   @Output() mostrarD: EventEmitter <boolean> = new EventEmitter();
   @Output() mostrarM: EventEmitter <boolean> = new EventEmitter();
   constructor(private datos:DataService) { }
 
-  ngOnInit(): void {
-    this.datos.getActores().subscribe(res => {
-      console.info("res", res);
-      this.listado = res.filter(res =>res.estado == 1);
-    })
+  ngOnInit(): void { 
+
+        this.datos.getActores().subscribe(res => {
+          console.info("res", res);
+          this.listado = res.filter(res =>res.estado == 1);
+        }) 
+
+
   }
  
   seleccionarActor(actor:ActorModel) {

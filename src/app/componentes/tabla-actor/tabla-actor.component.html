@@ -11,8 +11,8 @@
           <th *ngIf="mostrarB">Acciones</th>
         </tr>
       </thead>
-      <tbody >
-        <tr *ngFor="let actor of listado; let i = index" (click)="seleccionarActor(actor)">
+      <tbody *ngIf="!lista">
+        <tr  *ngFor="let actor of listado; let i = index" (click)="seleccionarActor(actor)">
           <td> <img [src]="actor.foto" alt="" width="100" height="100"></td>
           <td>{{actor.nombre}} </td>
           <td>{{actor.apellido}} </td>
@@ -25,7 +25,24 @@
             <button   class="btn btn-danger" (click)="mostrar('E',actor)" ><i class="fa fa-times" aria-hidden="true"></i></button>
           </td> 
         </tr>     
-      
+
+        
+      </tbody>
+      <tbody *ngIf="lista">
+        <tr  *ngFor="let actor of lista; let i = index" (click)="seleccionarActor(actor)">
+          <td> <img [src]="actor.foto" alt="" width="100" height="100"></td>
+          <td>{{actor.nombre}} </td>
+          <td>{{actor.apellido}} </td>
+          <td>{{actor.fecha}} </td>
+          <td>{{actor.sexo}} </td>
+          <td>{{actor.nacionalidad.name}} </td>
+          <td *ngIf="mostrarB">
+            <button  class="btn btn-primary" (click)="mostrar('D',actor)" ><i class="fa fa-info-circle" aria-hidden="true"></i></button>
+            <button  class="btn btn-success" (click)="mostrar('M',actor)" ><i class="fa fa-pencil" aria-hidden="true"></i></button>
+            <button   class="btn btn-danger" (click)="mostrar('E',actor)" ><i class="fa fa-times" aria-hidden="true"></i></button>
+          </td> 
+        </tr>   
+
       </tbody>
     </table>
 

@@ -42,6 +42,8 @@ import { DetallePaisComponent } from './componentes/detalle-pais/detalle-pais.co
 
 //http
 import { HttpClientModule } from '@angular/common/http';
+import { PaisesActoresComponent } from './componentes/paises-actores/paises-actores.component';
+import { FiltroPipe } from './pipes/filtro.pipe';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { HttpClientModule } from '@angular/common/http';
     UpdateActorComponent,
     ActorPeliculaComponent,
     PeliculasDeActorComponent,
-    DetallePaisComponent
+    DetallePaisComponent,
+    PaisesActoresComponent,
+    FiltroPipe
   ],
   imports: [
     BrowserModule,
