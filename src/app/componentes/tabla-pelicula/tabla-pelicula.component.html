@@ -7,20 +7,37 @@
           <th >Fecha de Estreno</th>
           <th >Público</th>
           <th>Actor</th>
+          <th>Pais</th>
           <th >foto</th>
         </tr>
       </thead>
-      <tbody >
-        <tr *ngFor="let pelis of listado; let i = index" (click)="seleccionarPelicula(pelis, i)">
-          <td>{{pelis.nombre}} </td>
-          <td>{{pelis.tipo}} </td>
-          <td>{{pelis.fecha}} </td>
-          <td>{{pelis.publico}} </td>
-          <td>{{pelis.actor.nombre}} </td>
-          <td> <img [src]="pelis.foto" alt="" width="100" height="100"></td>
-        </tr>     
-      
-      </tbody>
-    </table>
+      <tbody *ngIf="!peliculas">
+        
+          <tr *ngFor="let pelis of listado; let i = index" (click)="seleccionarPelicula(pelis, i)">
+            <td>{{pelis.nombre}} </td>
+            <td>{{pelis.tipo}} </td>
+            <td>{{pelis.fecha}} </td>
+            <td>{{pelis.publico}} </td>
+            <td>{{pelis.actor.nombre}} </td>
+            <th>{{pelis.nacionalidad.name}}</th>
+            <td> <img [src]="pelis.foto" alt="" width="100" height="100"></td>
+          </tr>     
+
+        
+          
+        </tbody>
+        <tbody *ngIf="peliculas">
+          <tr *ngFor="let pelis of peliculas; let i = index" (click)="seleccionarPelicula(pelis, i)">
+            <td>{{pelis.nombre}} </td>
+            <td>{{pelis.tipo}} </td>
+            <td>{{pelis.fecha}} </td>
+            <td>{{pelis.publico}} </td>
+            <td>{{pelis.actor.nombre}} </td>
+            <th>{{pelis.nacionalidad.name}}</th>
+            <td> <img [src]="pelis.foto" alt="" width="100" height="100"></td>
+          </tr>     
+
+        </tbody>
+      </table>
 
 </div>

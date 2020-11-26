@@ -19,6 +19,7 @@ export class PeliculaModel {
     foto?: string;
     actor?: ActorModel = new ActorModel();
     estado:number;
+    nacionalidad:any;
 }
 
 export class Productos{

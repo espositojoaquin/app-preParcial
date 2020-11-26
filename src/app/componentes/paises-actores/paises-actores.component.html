@@ -8,13 +8,20 @@
 <app-tabla-paises (PaisSeleccionado)="paisSelec($event)" [filtro]="filtro"></app-tabla-paises>
 
 <div class="row" style="margin-left:2rem;">
-    <div style="width: 50%; margin-top: 2rem;">
+    <div style="width: 35%; margin-top: 2rem;">
         <app-tabla-actor *ngIf="lista" [lista]="lista" (ActorSeleccionado)="actorSeleccionado($event)"></app-tabla-actor>
     
     </div>
     <div style="width: 30%;">
-        <app-actor-detalle *ngIf="actor" [actor]="actor" [mostrarD]="true" [borrar]="0"></app-actor-detalle>
+        <!-- <app-actor-detalle *ngIf="actor" [actor]="actor" [mostrarD]="true" [borrar]="0"></app-actor-detalle> -->
+        <app-detalle-pais *ngIf="paisSeleccionado" [pais]="paisSeleccionado"></app-detalle-pais>
 
     </div>
+    <div style="width: 30%; margin-top: 2rem;">
+        <!-- <app-tabla-actor *ngIf="lista" [lista]="lista" (ActorSeleccionado)="actorSeleccionado($event)"></app-tabla-actor> -->
+        <!-- <app-tabla-paises *ngIf="peliculas" [paises]="peliculas"></app-tabla-paises> -->
+        <app-tabla-pelicula *ngIf="peliculas" [peliculas]="peliculas"></app-tabla-pelicula>
+    </div>
+    
     
 </div>

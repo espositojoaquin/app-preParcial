@@ -10,6 +10,7 @@ import { PeliculaModel } from "../../modelos/model";
 export class TablaPeliculaComponent implements OnInit {
   
   public listado: Array<PeliculaModel>;
+  @Input() peliculas:any;
   @Output() peliculaSeleccionada: EventEmitter <PeliculaModel> = new EventEmitter();
   @Output() indexPeliculaSeleccionada: EventEmitter <number> = new EventEmitter();
   constructor(private datos:DataService) { }

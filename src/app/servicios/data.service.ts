@@ -39,7 +39,8 @@ export class DataService {
           fecha: pelicula.fecha,
           publico:pelicula.publico,
           tipo:pelicula.tipo,
-          foto: "https://ignaciosantiago.com/wp-content/uploads/2013/08/Sabes-cuando-es-la-calidad-de-una-pelicula-en-internet-mejor-o-peor-2.jpg"
+          foto: "https://ignaciosantiago.com/wp-content/uploads/2013/08/Sabes-cuando-es-la-calidad-de-una-pelicula-en-internet-mejor-o-peor-2.jpg",
+          nacionalidad:pelicula.nacionalidad
          })
 
       })

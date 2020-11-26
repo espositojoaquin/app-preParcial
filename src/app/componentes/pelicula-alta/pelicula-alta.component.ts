@@ -60,12 +60,22 @@ export class PeliculaAltaComponent implements OnInit {
       tipo: ['', Validators.required],
       fecha_estreno: ['', Validators.required],
       cantidad_publico: ['', Validators.required,Validators.min(0),Validators.max(1000)],
-      actor: ['', Validators.required]
+      actor: ['', Validators.required],
+      nacionalidad:['', Validators.required]
     }​​);
 
   
 
 
+  }
+
+  paisSeleccionado(dato:any)
+  { 
+    this.form.patchValue({​​
+      nacionalidad: dato.name,
+    }​​);
+    this.pelicula.nacionalidad = dato;
+    
   }
 
   get nombre() {​​ return this.form.get('nombre'); }​​

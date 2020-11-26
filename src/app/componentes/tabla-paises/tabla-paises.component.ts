@@ -19,7 +19,7 @@ export class TablaPaisesComponent implements OnInit {
     // this.datos.getPaises().subscribe(res => {
     //   console.info("res", res);
     //   this.listado = res;
-    // })
+    // }) 
 
     this.datos.getPaisesService().subscribe(res =>{
       this.listado = res; 
